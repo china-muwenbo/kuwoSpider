@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dylan.kuwoSpider.BlogMapper.GetMusicData">
+
+    <resultMap type="com.dylan.kuwoSpider.MusicBean" id="replyMap">
+
+        <result column="url" property="mp3"/>
+        <result column="duration" property="duration"/>
+        <result column="cover" property="cover"/>
+        <result column="title" property="title"/>
+        <result column="artist" property="artist"/>
+        <result column="background" property="background"/>
+
+    </resultMap>
+
+    <select id="getMusicData" resultMap="replyMap">
+        SELECT * FROM `musicinfo` LIMIT 0, 1000;
+    </select>
+
+</mapper>
